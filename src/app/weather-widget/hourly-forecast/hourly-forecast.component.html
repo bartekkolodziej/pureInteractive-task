@@ -1,0 +1,40 @@
+<div class="main__day">{{hourlyForecast.day}}</div>
+<div class="main__hour">{{hourlyForecast.hour}}</div>
+<div class="main__forecast">
+  <img src="{{hourlyForecast.forecast.iconURL}}" alt="{{hourlyForecast.forecast.description}}">
+</div>
+<div class="main__temperature">
+  <span>{{hourlyForecast.currentTemperature.value}}&#176;</span>
+  <svg width="100" height="200">
+    <line
+      x1="0"
+      [attr.y1]="temperatureDivHeight - getVerticalPositionForTemperaturePoint(hourlyForecast.currentTemperature.value)"
+      x2="100"
+      [attr.y2]="hourlyForecast.temperatureInThreeHours ?
+      temperatureDivHeight - getVerticalPositionForTemperaturePoint(hourlyForecast.temperatureInThreeHours.value) : temperatureDivHeight/2"
+      stroke="orange">
+    </line>
+  </svg>
+</div>
+<div class="main__rainfall">
+  <span>{{hourlyForecast.rainfall ? hourlyForecast.rainfall.value + hourlyForecast.rainfall.unit : 0}}</span>
+  <div #rainfallIndicator class="main__rainfall-indicator"></div>
+</div>
+<div class="main__wind-direction">
+  <span>{{hourlyForecast.windDirection.description}}</span>
+  <div><i #arrow class="fas fa-2x fa-arrow-circle-up"></i></div>
+</div>
+<div class="main__wind-speed">{{hourlyForecast.windSpeed.value + hourlyForecast.windSpeed.unit}}</div>
+<div class="main__pressure">
+  <span>{{hourlyForecast.currentPressure.value + ' ' + hourlyForecast.currentPressure.unit}}</span>
+  <svg width="100" height="200">
+    <line
+      x1="0"
+      [attr.y1]="pressureDivHeight - getVerticalPositionForPressurePoint(hourlyForecast.currentPressure.value)"
+      x2="100"
+      [attr.y2]="hourlyForecast.pressureInThreeHours ?
+      pressureDivHeight - getVerticalPositionForPressurePoint(hourlyForecast.pressureInThreeHours.value) : pressureDivHeight/2"
+      stroke="orange">
+    </line>
+  </svg>
+</div>

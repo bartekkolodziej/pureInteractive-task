@@ -1,0 +1,19 @@
+<aside class="aside">
+  <div class="aside__day">Day</div>
+  <div class="aside__hour">Hour</div>
+  <div class="aside__forecast">Forecast</div>
+  <div class="aside__temperature">Temperature</div>
+  <div class="aside__rainfall">Rainfall</div>
+  <div class="aside__wind-direction">Wind direction</div>
+  <div class="aside__wind-speed">Wind speed</div>
+  <div class="aside__pressure">Atmospheric pressure</div>
+</aside>
+
+<main class="main">
+  <app-hourly-forecast
+    *ngFor="let item of hourlyForecastList"
+    [hourlyForecast]="item"
+    [minMaxTemp]="minMaxTemp"
+    [minMaxPressure]="minMaxPressure"
+    [maxRainfall]="maxRainfall"></app-hourly-forecast>
+</main>

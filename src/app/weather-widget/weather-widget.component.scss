@@ -1,0 +1,91 @@
+$aside-width-big: 180px;
+$aside-width-small: 100px;
+
+:host {
+  width: 100vw;
+  height: 100vh;
+  min-height: 900px;
+  display: flex;
+  overflow-y: hidden;
+}
+
+.main {
+  display: flex;
+  margin-left: $aside-width-big;
+}
+
+
+.aside {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 900px;
+  width: $aside-width-big;
+  box-shadow: 8px 0 8px 0 rgba(0, 0, 0, 0.1);
+  border-right: 1px solid lightgrey;
+  background-color: white;
+  margin-bottom: 10px;
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 48px;
+    padding: 16px;
+    text-align: center;
+    font-weight: bold;
+    color: darkgray;
+    border-bottom: 1px solid lightgrey;
+    box-sizing: border-box;
+  }
+}
+
+.aside__day {
+  flex-basis: 6.25%;
+}
+
+.aside__hour {
+  flex-basis: 6.25%;
+}
+
+.aside__forecast {
+  flex-basis: 9.25%;
+}
+
+.aside__temperature {
+  flex-basis: 22%;
+}
+
+.aside__rainfall {
+  flex-basis: 12.5%;
+}
+
+.aside__wind-direction {
+  flex-basis: 12.5%;
+}
+
+.aside__wind-speed {
+  flex-basis: 12.5%;
+}
+
+.aside__pressure {
+  flex-basis: 18.75%;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .aside {
+    width: $aside-width-small;
+
+    div {
+      margin-left: 0;
+      padding: 0;
+      font-size: 12px;
+    }
+  }
+
+  .main {
+    margin-left: $aside-width-small + 10px;
+  }
+}

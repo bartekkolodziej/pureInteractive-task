@@ -1,0 +1,84 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  min-width: 100px;
+  border-right: 1px solid lightgrey;
+
+  div {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+    width: 100px;
+
+    svg {
+      position: absolute;
+    }
+  }
+}
+
+.main__day {
+  flex-basis: 6.25%;
+  font-weight: bold;
+  color: darkgray;
+}
+
+.main__hour {
+  flex-basis: 6.25%;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.main__forecast {
+  flex-basis: 9.25%;
+}
+
+.main__temperature {
+  flex-basis: 22%;
+
+  span {
+    font-weight: bold;
+    font-size: 20px;
+  }
+}
+
+.main__rainfall {
+  flex-basis: 12.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between !important;
+
+  span {
+    font-weight: bold;
+  }
+
+  .main__rainfall-indicator {
+    width: 100%;
+    background-color: deepskyblue;
+  }
+}
+
+.main__wind-direction {
+  flex-basis: 12.5%;
+  background-color: #f0f0f0;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around !important;
+}
+
+.main__wind-speed {
+  flex-basis: 12.5%;
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+.main__pressure {
+  flex-basis: 18.75%;
+
+  span {
+    font-weight: bold;
+    font-size: 18px;
+  }
+}
